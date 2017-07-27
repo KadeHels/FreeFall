@@ -12,52 +12,66 @@
 	<link rel="stylesheet" href="css/font-awesome.css">
 	<link rel="stylesheet" href="css/animate.css">
 	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/main.css" rel="stylesheet" />
 
 <!-- =======================================================
     Authors: Kade Helseth
 ======================================================= -->
   </head>
   <body>
-	<header>
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="navigation">
-				<div class="container">					
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<div class="navbar-brand">
-							<a href="index.html"><h1>Free Fall</h1></a>
+	<header class="col-md-12">
+		<div class="container" >
+			<nav class="navbar navbar-default navbar-static-top" role="navigation">
+				<div class="navigation">
+					<div class="container">					
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<div class="navbar-brand">
+								<a href="index.html"><h1>Free Fall</h1></a>
+							</div>
 						</div>
+						
+						<div class="navbar-collapse collapse">							
+							<div class="menu">
+								<ul class="nav nav-tabs" role="tablist">
+									<li role="presentation"><a href="#home" class="active">Home</a></li>					
+								</ul>
+							</div>
+						</div>						
 					</div>
-					
-					<div class="navbar-collapse collapse">							
-						<div class="menu">
-							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation"><a href="#home" class="active">Home</a></li>					
-							</ul>
-						</div>
-					</div>						
-				</div>
-			</div>	
-		</nav>			
+				</div>	
+			</nav>
+		</div>			
 	</header>
-	<
-	<section id="main">
-		<div class="container">
+	<section id="main" ng-app="myApp" style="position: static;">
+		<div class="container" ng-controller="myCtrl">
 			<div class="center">
-				<div class="col-md-6 col-md-offset-3" ng-app="myApp" ng-controller="myCtrl">
+				<div class="col-md-12">
 					<h2>Calculate free fall</h2>
-					<hr>					
-					<p class="lead">
-						<span ng-bind=".5*gravity*time*time"></span> meters = .5 
-						<input ng-model="gravity" value={{gravity}} class="inputsm"/>
-						<input ng-model="time" value={{time}} class="inputsm"/>seconds
-						 ^ 2
-					 </p>
+					<hr>
+				</div>
+				<div class="col-md-9 center" >					
+				<p class="lead">
+					<input ng-model="distance" ></input> meters = .5 
+					<input ng-model="gravity" class="inputsm customInput"/>
+					m/s<sup>2</sup>
+					&times;
+					<input ng-model="time" class="inputsm customInput"/>seconds
+					<sup>2</sup>
+				 </p>
+				</div>
+				<div class="container col-md-3 center">
+					<div class="btn-group">
+						<button class="btn btn-danger" ng-click="calculateDistance()">Distance</button>
+						<button class="btn btn-info" ng-click="calculateGravity()">Gravity</button>
+						<button class="btn btn-success" ng-click="calculateTime()">Time</button>
+					</div>	
+
 				</div>
 			</div>
 		</div>
