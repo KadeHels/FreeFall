@@ -18,7 +18,7 @@
     Authors: Kade Helseth
 ======================================================= -->
   </head>
-  <body>
+  <body ng-app="myApp">
 	<header class="col-md-12">
 		<div class="container" >
 			<nav class="navbar navbar-default navbar-static-top" role="navigation">
@@ -48,7 +48,7 @@
 			</nav>
 		</div>			
 	</header>
-	<section id="main" ng-app="myApp" style="position: static;">
+	<section id="main" style="position: static;">
 		<div class="container" ng-controller="myCtrl">
 			<div class="center">
 				<div class="col-md-12">
@@ -70,6 +70,27 @@
 						<button class="btn btn-danger" ng-click="calculateDistance()">Distance</button>
 						<button class="btn btn-info" ng-click="calculateGravity()">Gravity</button>
 						<button class="btn btn-success" ng-click="calculateTime()">Time</button>
+					</div>	
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<hr>
+	<section id="main" style="position: static;">
+		<div class="container" ng-controller="FizzBuzz">
+			<div class="center">
+				<div class="col-md-12">
+					<h2>Play FizzBuzz</h2>
+					<p > Players take turns to count incrementally, replacing any number divisible by three with the word "fizz", and any number divisible by five with the word "buzz".</p>
+					<hr>
+				</div>
+				<div class="col-md-9 center" >					
+				<p class="lead">{{value}}</p>
+				</div>
+				<div class="container col-md-3 center">
+					<div class="btn-group">
+						<button class="btn btn-danger" ng-click="getNext()">Next</button>
 					</div>	
 
 				</div>

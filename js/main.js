@@ -17,3 +17,31 @@ app.controller("myCtrl", function($scope) {
 });
 
 
+app.controller("FizzBuzz", function($scope) {
+    $scope.currentNumber = 1
+    $scope.value = "1";
+
+    $scope.getNext = function(){
+    	var isAppended = false;
+    	 this.value = "";
+
+    	if(this.currentNumber % 3 == 0)
+    	{
+    		isAppended = true;
+    		this.value += "Fizz";
+    	}
+    	if(this.currentNumber % 5 == 0)
+    	{
+    		isAppended = true;
+    		this.value += "Buzz";
+    	}
+
+    	if(!isAppended){
+    		this.value = this.currentNumber;
+    	}
+
+    	this.currentNumber++;
+    	return this.value;
+    };
+
+});
