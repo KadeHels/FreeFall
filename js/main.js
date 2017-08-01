@@ -23,7 +23,7 @@ app.controller("FizzBuzz", function($scope) {
 
     $scope.getNext = function(){
     	var isAppended = false;
-    	 this.value = "";
+    	this.value = "";
 
     	if(this.currentNumber % 3 == 0)
     	{
@@ -41,7 +41,6 @@ app.controller("FizzBuzz", function($scope) {
     	}
 
     	this.currentNumber++;
-    	return this.value;
     };
 
 });
