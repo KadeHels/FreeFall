@@ -18,7 +18,7 @@ app.controller("myCtrl", function($scope) {
 
 
 app.controller("FizzBuzz", function($scope) {
-    $scope.currentNumber = 1
+    $scope.currentNumber = 1;
     $scope.value = "1";
 
     $scope.getNext = function(){
