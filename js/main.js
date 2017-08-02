@@ -43,4 +43,34 @@ app.controller("FizzBuzz", function($scope) {
     	this.currentNumber++;
     };
 
+    $scope.getPrevious = function(){
+    	this.currentNumber--;
+    	var isAppended = false;
+    	this.value = "";
+
+    	if(this.currentNumber % 3 == 0)
+    	{
+    		isAppended = true;
+    		this.value += "Fizz";
+    	}
+    	if(this.currentNumber % 5 == 0)
+    	{
+    		isAppended = true;
+    		this.value += "Buzz";
+    	}
+
+    	if(!isAppended){
+    		this.value = this.currentNumber;
+    	}
+    };
+
+    $scope.reset = function(){
+   		this.currentNumber = 1;
+    	this.value = this.currentNumber;
+    };
+
+});
+
+app.controller("FizzBuzz", function($scope) {
+
 });

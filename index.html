@@ -90,7 +90,16 @@
 				</div>
 				<div class="container col-md-3 center">
 					<div class="btn-group">
-						<button class="btn btn-danger" ng-click="getNext()">Next</button>
+						<button class="btn btn-danger" ng-click="getPrevious()">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</button>
+						<button class="btn btn-info" ng-click="getNext()">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</button>
+
+						<button class="btn btn-success" ng-click="reset()">
+							<span class="glyphicon glyphicon-repeat"></span>
+						</button>
 					</div>	
 				</div>
 			</div>
