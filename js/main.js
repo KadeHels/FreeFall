@@ -71,6 +71,68 @@ app.controller("FizzBuzz", function($scope) {
 
 });
 
-app.controller("FizzBuzz", function($scope) {
+app.controller("rockPaperScissor", function($scope) {
+	$scope.userChoice = "";
+	$scope.computerChoice = "";
+	$scope.result = "";
+
+	$scope.playRound = function(input){
+		this.userChoice = input;
+		this.getComputerMove();
+		this.getResults();
+	};
+
+	$scope.getComputerMove = function(){
+		var value = "";
+
+		var temp = new Date().getMilliseconds() % 3;
+
+		switch (temp) {
+			case 0:
+				value = "Rock";
+			break;
+
+			case 1:
+				value = "Paper";
+			break;
+
+			case 2:
+				value = "Scissor"
+		}
+
+		this.computerChoice = value;
+	};
+
+	$scope.getResults = function(){
+		this.result = "";
+
+		if(this.userChoice == this.computerChoice){
+			this.result = "Tie";
+		}
+		else if(this.userChoice == "Rock"){
+			if (this.computerChoice == "Paper") {
+				this.result = "Lose";
+			}
+			else if(this.computerChoice == "Scissor"){
+				this.result = "Win";
+			}
+		}
+		else if(this.userChoice == "Paper"){
+			if (this.computerChoice == "Scissor") {
+				this.result = "Lose";
+			}
+			else if(this.computerChoice == "Rock"){
+				this.result = "Win";
+			}
+		}
+		else if(this.userChoice == "Scissor"){
+			if (this.computerChoice == "Rock") {
+				this.result = "Lose";
+			}
+			else if(this.computerChoice == "Paper"){
+				this.result = "Win";
+			}
+		}
+	};
 
 });
